@@ -14,6 +14,6 @@ const app = fastify({
 app.register(dbConnector)
 app.register(routes)
 
-app.listen({ port: 3000, host: '0.0.0.0' }, err => {
+app.listen({ port: Number(process.env.PORT) || 3000, host: '0.0.0.0' }, err => {
   if (err) throw err
 })
